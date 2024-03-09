@@ -1,12 +1,14 @@
+package org.example;
+
 public class Apteka {
-        String Kraj;
-        String Woj;
-        String Miasto;
-        String Ulica;
-        String Budynek;
-        String Lokal;
-        String KodPoczt;
-        String NumerTel;
+        private String Kraj;
+        private String Woj;
+        private String Miasto;
+        private String Ulica;
+        private String Budynek;
+        private String Lokal;
+        private String KodPoczt;
+        private String NumerTel;
 
     public String getKraj() {
         return Kraj;
@@ -69,6 +71,27 @@ public class Apteka {
     }
 
     public void setNumerTel(String numerTel) {
+        NumerTel = numerTel;
+    }
+
+    public Apteka(String kraj, String woj, String miasto, String ulica, String budynek, String lokal, String kodPoczt, String numerTel) {
+        Kraj = kraj;
+        Woj = woj;
+        Miasto = miasto;
+        Ulica = ulica;
+        Budynek = budynek;
+        Lokal = lokal;
+        KodPoczt = kodPoczt;
+        NumerTel = numerTel;
+    }
+
+    public Apteka(String kraj, String woj, String miasto, String ulica, String budynek, String kodPoczt, String numerTel) {
+        Kraj = kraj;
+        Woj = woj;
+        Miasto = miasto;
+        Ulica = ulica;
+        Budynek = budynek;
+        KodPoczt = kodPoczt;
         NumerTel = numerTel;
     }
 }
