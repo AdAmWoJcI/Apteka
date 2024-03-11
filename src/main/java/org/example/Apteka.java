@@ -1,14 +1,14 @@
 package org.example;
 
 public class Apteka {
-        private String Kraj;
-        private String Woj;
-        private String Miasto;
-        private String Ulica;
-        private String Budynek;
-        private String Lokal;
-        private String KodPoczt;
-        private String NumerTel;
+    private String Kraj;
+    private String Woj;
+    private String Miasto;
+    private String Ulica;
+    private String Budynek;
+    private String Lokal;
+    private String KodPoczt;
+    private String NumerTel;
 
     public String getKraj() {
         return Kraj;
@@ -93,6 +93,52 @@ public class Apteka {
         Budynek = budynek;
         KodPoczt = kodPoczt;
         NumerTel = numerTel;
+    }
+
+    public void czyCyfraKraj() {
+        boolean zawieraCyfre = false;
+        for (int i = 0; i < Kraj.length(); i++) {
+            if (Character.isDigit(Kraj.charAt(i))) {
+                zawieraCyfre = true;
+
+                }
+            }
+        if(zawieraCyfre = true){
+            System.out.println("Podany kraj zawiera w sobie cyfrę");
+        }
+    }
+    public void czyCyfraWoj() {
+        boolean zawieraCyfre = false;
+        for (int i = 0; i < Woj.length(); i++) {
+            if (Character.isDigit(Woj.charAt(i))) {
+                zawieraCyfre = true;
+            }
+        }
+        if(zawieraCyfre = true){
+            System.out.println("Podane Województwo zawiera w sobie cyfrę");
+        }
+    }
+    public void czyCyfraMiasto() {
+        boolean zawieraCyfre = false;
+        for (int i = 0; i < Miasto.length(); i++) {
+            if (Character.isDigit(Miasto.charAt(i))) {
+                zawieraCyfre = true;
+            }
+        }
+        if(zawieraCyfre = true){
+            System.out.println("Podane miasto zawiera w sobie cyfrę");
+        }
+    }
+    public void czyCyfraUlica() {
+        boolean zawieraCyfre = false;
+        for (int i = 0; i < Ulica.length(); i++) {
+            if (Character.isDigit(Ulica.charAt(i))) {
+                zawieraCyfre = true;
+            }
+        }
+        if(zawieraCyfre = true){
+            System.out.println("Podana ulica zawiera w sobie cyfrę");
+        }
     }
 }
 
