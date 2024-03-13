@@ -15,7 +15,12 @@ public class Apteka {
     }
 
     public void setKraj(String kraj) {
+        if(czyCyfra(kraj)){
+            System.out.println("Bład ustawiania wartosci zmiennej");
+        }
+        else {
         Kraj = kraj;
+        }
     }
 
     public String getWoj() {
@@ -95,6 +100,20 @@ public class Apteka {
         NumerTel = numerTel;
     }
 
+    public boolean czyCyfra(String zmienna) {
+        boolean zawieraCyfre = false;
+        for (int i = 0; i < zmienna.length(); i++) {
+            if (Character.isDigit(zmienna.charAt(i))) {
+                zawieraCyfre = true;
+
+            }
+        }
+        if(zawieraCyfre = true){
+            System.out.println("Podana zmienna: "+zmienna+" zawiera w sobie cyfrę");
+        }
+        return zawieraCyfre;
+    }
+
     public void czyCyfraKraj() {
         boolean zawieraCyfre = false;
         for (int i = 0; i < Kraj.length(); i++) {
@@ -106,6 +125,7 @@ public class Apteka {
         if(zawieraCyfre = true){
             System.out.println("Podany kraj zawiera w sobie cyfrę");
         }
+
     }
     public void czyCyfraWoj() {
         boolean zawieraCyfre = false;
