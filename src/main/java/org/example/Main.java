@@ -2,9 +2,27 @@ package org.example;
 
 import java.util.Scanner;
 
+import static org.example.GenKlient.genKlienci;
+
 public class Main {
 
      public static void main(String[] args) {
+
+         Klient k1 = new Klient("Radek","Dan","1q2w3e4r5");
+
+         System.out.println( "klient1: "+k1);
+
+         Klient[] tablica2;
+         tablica2 =genKlienci(4);
+         System.out.println("---------------");
+
+
+
+
+
+
+
+
          Apteka apteka = new Apteka("Polska", "Lubelskie","Świdnik", "Racławicka", "28","21-040","000000000");
          Apteka apteka1 = new Apteka("Polska", "Lubelskie","Świdnik1", "Racławicka", "28","21-040","000000000");
          Apteka apteka2= new Apteka("Polska", "Lubelskie","Świdnik2", "Racławicka", "28","21-040","000000000");
