@@ -1,7 +1,8 @@
 package org.example;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
@@ -73,12 +74,13 @@ public class Menu {
                     break;
                 case 3:
                     printSubMenu(MainMenu.get(choice - 1), SubMenuAdmin);
-                    choice2 = scanner.nextInt();
+                    wyswietlDaneAptekZPliku();
                     break;
                 default:
                     System.out.println("Niepoprawna opcja.1");
             }
         }
+        scanner.close();
 
 
     }
@@ -89,6 +91,36 @@ public class Menu {
                 System.out.println("Dane apteki (Miasto) (Ulica): "+apteka.getMiasto()+" "+apteka.getUlica());
             }
     }
+
+    public static void wyswietlDaneAptekZPliku(){
+        List<Apteka> apteki = wczytajAptekiZPlikuTXT("apteki.txt");
+        for (Apteka apteka : apteki) {
+            System.out.println(apteka.getMiasto()+", "+apteka.getNumerTel());
+        }
+    }
+
+    public static List<Apteka> wczytajAptekiZPlikuTXT(String sciezkaDoPliku){
+        List<Apteka> apteki = new ArrayList<>();
+        File plik = new File(sciezkaDoPliku);
+        try {
+            Scanner odczyt = new Scanner(plik);
+            while(odczyt.hasNextLine()){
+                String linia = odczyt.nextLine();
+                String[] dane = linia.split(",");
+                if (dane.length == 8) {
+                    apteki.add(new Apteka(dane[0], dane[1], dane[2], dane[3], dane[4], dane[5], dane[6], dane[7]));
+                }else{
+                    apteki.add(new Apteka(dane[0], dane[1], dane[2], dane[3], dane[4], dane[5], dane[6]));
+                }
+            }
+            odczyt.close();
+        } catch (FileNotFoundException e) {
+            // TODO Auto-generated catch block
+            System.out.println("Nie znaleziono pliku: "+sciezkaDoPliku);
+            e.printStackTrace();
+        }
+        return apteki;
+    } 
 
 
 }
