@@ -13,6 +13,8 @@ public class Menu {
     private  List<String> SubMenuCustomer;
     private  List<String> SubMenuAdmin;
 
+    private List<Apteka> AptekaList = wczytajAptekiZPlikuTXT("apteki.txt");
+
 
     //Zmiany w konstruktorze
     public Menu() {
@@ -74,7 +76,13 @@ public class Menu {
                     break;
                 case 3:
                     printSubMenu(MainMenu.get(choice - 1), SubMenuAdmin);
-                    wyswietlDaneAptekZPliku();
+                    System.out.print("Wybor: ");
+                    choice2 = scanner.nextInt();
+                    switch (choice2){
+                        case 1:
+                            wyswietlDaneAptekZPliku();
+                            break;
+                    }
                     break;
                 default:
                     System.out.println("Niepoprawna opcja.1");
