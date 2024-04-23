@@ -1,4 +1,5 @@
-Jan;Kowalski;mazowieckie;Warszawa;00-001;Marszałkowska;10;2;500500500;jan.kowalski@example.com;true;haslo123;2024-04-23
-Anna;Nowak;wielkopolskie;Poznań;60-356;Długa;4;5;600600600;anna.nowak@example.com;false;haslo123;2024-04-23
-Piotr;Zając;śląskie;Katowice;40-312;Krótka;22;1;700700700;piotr.zajac@example.com;true;haslo123;2024-04-22
-Magdalena;Czajka;dolnośląskie;Wrocław;50-001;Oławska;15;3;800800800;magdalena.czajka@example.com;true;haslo123;2024-04-22
+firstName;lastName;province;town;postCode;street;houseNumber;flatNumber;phone;email;email_ver;password;created_at;numerRecepty
+Jan;Kowalski;mazowieckie;Warszawa;00-001;Marszałkowska;10;2;500500500;jan.kowalski@example.com;true;haslo123;2024-04-23;1q2w3e4
+Anna;Nowak;wielkopolskie;Poznań;60-356;Długa;4;5;600600600;anna.nowak@example.com;false;haslo123;2024-04-23;qaz
+Piotr;Zając;śląskie;Katowice;40-312;Krótka;22;1;700700700;piotr.zajac@example.com;true;haslo123;2024-04-22;3r543
+Magdalena;Czajka;dolnośląskie;Wrocław;50-001;Oławska;15;3;800800800;magdalena.czajka@example.com;true;haslo123;2024-04-22;cfgtrrd4
