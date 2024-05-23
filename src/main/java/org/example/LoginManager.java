@@ -32,7 +32,7 @@ public class LoginManager {
         File file = new File(filePath);
         Scanner scanner = null;
         try {
-            scanner = new Scanner(file);
+            scanner = new Scanner(file); //TODO popraw wyjatek
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         }
@@ -59,5 +59,32 @@ public class LoginManager {
         }
         return sb.toString();
     }
+    public void loginWithStaticData() {
+        String email = "anna.nowak@example.com";
+        String haslo = "haslo123";
+        if(login (email, haslo)){
+            Menu menu = new Menu();
+            menu.startMenu();
+        }
+        else{
+            System.out.println("Niepoprawny email lub hasło");
+        }
+    }
+    
 
+    public void loginWithScannerData(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Podaj email: ");
+        String email = scanner.nextLine();
+        System.out.println("Podaj hasło: ");
+        String haslo = scanner.nextLine();
+        scanner.close();
+        if(login (email, haslo)){
+            Menu menu = new Menu();
+            menu.startMenu();
+        }
+        else{
+            System.out.println("Niepoprawny email lub hasło");
+        }
+    }
 }
