@@ -63,8 +63,9 @@ public class LoginManager {
         String haslo = "haslo123";
         if (login(email, haslo)) {
             Menu menu = new Menu();
-            menu.startMenu();
-        } else {
+            //menu.startMenu();
+        }
+        else{
             System.out.println("Niepoprawny email lub hasło");
         }
     }
@@ -76,10 +77,11 @@ public class LoginManager {
         System.out.println("Podaj hasło: ");
         String haslo = scanner.nextLine();
         scanner.close();
-        if (login(email, haslo)) {
-            Menu menu = new Menu();
-            menu.startMenu();
-        } else {
+        if(login (email, haslo)){
+            //Menu menu = new Menu();
+            ///menu.startMenu();
+        }
+        else{
             System.out.println("Niepoprawny email lub hasło");
         }
     }
