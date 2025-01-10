@@ -1,8 +1,9 @@
 package org.example;
 
-import java.beans.Statement;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 public class Connect {
     private static final String JDBC_URL = "jdbc:h2:./database/apteka";
