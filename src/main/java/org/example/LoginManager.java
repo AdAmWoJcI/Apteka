@@ -8,19 +8,18 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class LoginManager {
-    //przygotowana klasa pod obsługe logowania
+    // przygotowana klasa pod obsługe logowania
 
-    //pola klasy
+    // pola klasy
     private final String filePath;
     private ArrayList<Klient> klienci;
 
-    //konstruktory
+    // konstruktory
     public LoginManager(String filePath) {
         this.filePath = filePath;
     }
 
-
-    //metody
+    // metody
     public boolean login(String email, String password) {
         String md5Password = null;
         try {
@@ -32,7 +31,7 @@ public class LoginManager {
         File file = new File(filePath);
         Scanner scanner = null;
         try {
-            scanner = new Scanner(file); //TODO popraw wyjatek
+            scanner = new Scanner(file); // TODO popraw wyjatek
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         }
@@ -48,7 +47,6 @@ public class LoginManager {
         return false;
     }
 
-
     private String convertToMD5(String password) throws NoSuchAlgorithmException {
         MessageDigest md = MessageDigest.getInstance("MD5");
         md.update(password.getBytes());
@@ -59,10 +57,11 @@ public class LoginManager {
         }
         return sb.toString();
     }
+
     public void loginWithStaticData() {
         String email = "anna.nowak@example.com";
         String haslo = "haslo123";
-        if(login (email, haslo)){
+        if (login(email, haslo)) {
             Menu menu = new Menu();
             //menu.startMenu();
         }
@@ -70,9 +69,8 @@ public class LoginManager {
             System.out.println("Niepoprawny email lub hasło");
         }
     }
-    
 
-    public void loginWithScannerData(){
+    public void loginWithScannerData() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Podaj email: ");
         String email = scanner.nextLine();
