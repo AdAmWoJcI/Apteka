@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class H2Setup {
-    private static final String JDBC_URL = "jdbc:h2:./database/apteka";
+    private static final String JDBC_URL = "jdbc:h2:/database/apteka";
     private static final String JDBC_USER = "sa";
     private static final String JDBC_PASSWORD = "";
 
